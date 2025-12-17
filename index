@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHO Timor-Leste 2025 Annual Highlights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f4c81 0%, #1e88e5 50%, #64b5f6 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: white;
+            position: relative;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .who-badge {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            color: #0f4c81;
+            font-size: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .from-line {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.9s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #0f4c81, #1e88e5, #64b5f6);
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .highlight-banner {
+            background: linear-gradient(135deg, #0f4c81 0%, #1e88e5 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .highlight-banner h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #1e88e5;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .malaria-spotlight {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .malaria-spotlight h3 {
+            font-size: 2.2em;
+            color: #0f4c81;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .malaria-spotlight p {
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0f4c81 0%, #1e88e5 100%);
+            color: white;
+            padding: 25px 60px;
+            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(15, 76, 129, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(15, 76, 129, 0.6);
+        }
+
+        .quote-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #1e88e5;
+            font-style: italic;
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .hero-card {
+                padding: 30px 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5em;
+            }
+
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <div class="who-badge">WHO Timor-Leste</div>
+            </div>
+            <h1>2025 Annual Highlights</h1>
+            <p class="subtitle">A Year of Historic Action and Achievement</p>
+            <p class="from-line">From: Dr. Arvind Mathur, WHO Representative to Timor-Leste</p>
+        </header>
+
+        <div class="hero-card">
+            <p class="intro-text">
+                <strong>Dear Esteemed Colleagues and Partners,</strong><br><br>
+                I am delighted to share the first edition of the WHO Timor-Leste Annual Highlights Newsletter, 
+                chronicling a remarkable year of collaboration and achievement for public health in Timor-Leste.
+                <br><br>
+                2025 transformed significant financial uncertainty into a year of historic action, thanks to the 
+                exemplary leadership of the Ministry of Health and our partners.
+            </p>
+
+            <div class="malaria-spotlight">
+                <h3>🎉 Historic Achievement: Malaria-Free Certification</h3>
+                <p>
+                    Timor-Leste has been officially certified <strong>malaria-free</strong> by WHO — 
+                    a monumental victory achieved just two decades after the nation's independence!
+                </p>
+            </div>
+
+            <div class="highlight-banner">
+                <h2>A Look at Our Collective Impact</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">250,000+</div>
+                    <div class="stat-label">Children screened through school health program</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">People receiving treatment for hypertension and diabetes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20,000+</div>
+                    <div class="stat-label">Doses of anti-rabies vaccine and immunoglobulins facilitated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6,000+</div>
+                    <div class="stat-label">People screened under HIV Sentinel Surveillance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Frontline workers trained in rabies and outbreak response</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">32</div>
+                    <div class="stat-label">Health professionals sent for advanced training abroad</div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                "This newsletter serves as a testament to the fact that strong national ownership and 
+                resilient partnerships create progress against all odds."
+            </div>
+
+            <div class="cta-section">
+                <a href="https://drive.google.com/file/d/12lkB61Wgo2cK6ge0B31BNNz4uTBsjPrc/preview" class="cta-button" target="_blank" rel="noopener noreferrer">
+                    📄 Read the Full Newsletter
+                </a>
+                <p style="margin-top: 20px; color: #666; font-size: 1.1em;">
+                    Click above to view the complete story of our progress in 2025
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.who.int/timorleste/" class="social-link">🌐 Website</a>
+                <a href="#" class="social-link">📘 Facebook</a>
+                <a href="#" class="social-link">📷 Instagram</a>
+                <a href="#" class="social-link">🐦 Twitter</a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.9;">
+                © 2025 World Health Organization Timor-Leste<br>
+                Building Health Systems, Transforming Lives
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
